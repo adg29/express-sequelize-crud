@@ -48,7 +48,7 @@ export const getListWrapper = (doQuery: DoQuery): RequestHandler => async (
   next
 ) => {
   try {
-    const { range, sort, filter } = req.query
+    const { range, sort, filter = {} } = req.query
 
     const [from, to] = range ? JSON.parse(range) : [0, 100]
 
